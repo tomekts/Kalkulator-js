@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 	// obługa klikania w liczby
-	var firstNuber;
+	var firstNuber=0;
 	var secondNumber;
 	var znak;
 	var wynik;
@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	function clickNumber(){		
 		for (var i = 0 ; i < listNumber.length; i++){
-			if (this==listNumber[i]) {				
+			if (this==listNumber[i]) {	
+				if (inputWork.value==0) {
+					inputWork.value='';
+				}			
 				if (i<9) {
 				inputWork.value+=i+1;
 				}else{
@@ -31,20 +34,24 @@ document.addEventListener('DOMContentLoaded', function() {
 	var znakRowna = document.querySelector('.rowna');
 	znakRowna.addEventListener('click', clickRowna);
 
-	function clickRowna(){
-		console.log(this);
+	function clickRowna(){		
 		secondNumber=inputWork.value;
 		inputWork.value="";
 		if (znak=='/') {
-			//inputWork.value=firstNuber/secondNumber;
+			if (firstNuber<secondNumber) {
+				alert('nie mozna dzielic mniejsza przez większa')
+			}else if (secondNumber==0) {
+				alert('nie mozna dzielic przez 0');
+			}else{
+			inputWork.value=firstNuber/secondNumber;
+			}
 		}else if (znak=='*') {
 			inputWork.value=firstNuber*secondNumber;
 		}else if (znak=='+') {			
 			inputWork.value=parseInt(firstNuber)+parseInt(secondNumber);
-			console.log('pies');
 		}else if (znak=='-') {
 			inputWork.value=firstNuber-secondNumber;
-			console.log('działa odejmowanie');
+			
 		}
 
 	}
@@ -59,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	function clickZnaki(){
-		console.log('działa');
+		console.log('działa');		
 		firstNuber=inputWork.value;
 		inputWork.value="";
 		for (var i = 0 ; i < listZnaki.length; i++){
