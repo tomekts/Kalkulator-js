@@ -1,0 +1,65 @@
+/*znacznik{
+właściwość:typ;
+}*/
+
+body{
+	background-color: lightgrey;	
+	font-family: 'Roboto',sans-serif;
+	
+	
+}
+
+.kalkulator{
+	width: 220px;		
+	display: inline-block;
+	text-align: center;
+
+
+	
+}
+.input{
+	width: 98%;
+	background-color: grey;
+}
+.number{
+	width: 75%;	
+	float: left;
+
+}
+.number div{
+	background-color: #74D5F6;
+	width: 32%;
+	height: 50px;
+	border: 1px solid;
+	float: left;
+}
+
+.number div:hover{
+	opacity: 0.6;
+
+}
+.znaki div:hover{
+	opacity: 0.6;
+
+}
+
+
+.rowna {
+	background-color: #44F5C6 !important;
+	width: 64% !important;
+}
+
+.znaki{
+	width: 25%;	
+	float: left;	
+	
+}
+.znaki div{
+	background-color: #B165EB;
+	width: 100%;
+	height: 50px;	
+	border: 1px solid;
+
+	
+
+}
